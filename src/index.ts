@@ -2,12 +2,17 @@ import ENV from './environment';
 
 import tmi from 'tmi.js';
 import Bot, { ChatClient } from 'bot-framework/src/Bot';
-import Service from 'bot-framework/src/Services';
+
+import WelcomeService from './services/welcome';
 
 //@ts-ignore
 const client: ChatClient = new tmi.client({
   options: {
-    debug: false
+    debug: false,
+  },
+  connection: {
+    reconnect: true,
+    secure: true
   },
   identity: {
     username: ENV.credentials.username,
@@ -15,18 +20,6 @@ const client: ChatClient = new tmi.client({
   },
   channels: [ ENV.credentials.channel ]
 })
-
-class WelcomeService extends Service {
-  onMessage(channel: string, userstate: UserState, msg: string, self: boolean) {
-    if (!self) {
-      if (msg.startsWith('!welcome')) {
-        this.bot.sendChatMessage(`Welcome to the stream ${userstate['display-name']}`);
-      }
-    }
-  }
-}
-
-let servInstance = new WelcomeService();
 
 new Bot(
   {
@@ -38,6 +31,6 @@ new Bot(
   client,
   {},
   [
-    servInstance
+    new WelcomeService()
   ]
 );
