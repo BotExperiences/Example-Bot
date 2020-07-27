@@ -7,5 +7,6 @@ export default {
     channel: process.env.channel,
     username: process.env.username,
     password: process.env.password,
-  }
+  },
+  newStream: true
 }
