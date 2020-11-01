@@ -1,21 +1,20 @@
 {
   "name": "example-bot",
   "version": "0.1.0",
-  "description": "",
-  "main": "lib/src/index.js",
+  "description": "An example twitch bot using @bot-experiences/framework",
+  "main": "lib/index.js",
   "scripts": {
     "clean": "rm -rf lib",
     "build": "tsc",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "start": "npm run clean && npm run build && node lib/src/index.js",
-    "test": "npm run build && ava --verbose"
+    "start": "npm run clean && npm run build && node lib/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BotExperiences/Example-Bot.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Bot Experiences",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/BotExperiences/Example-Bot/issues"
   },
@@ -30,6 +29,6 @@
     "eslint": "^7.5.0",
     "tmi.js": "^1.5.0",
     "typescript": "^3.9.7",
-    "bot-framework": "git+ssh://git@github.com/BotExperiences/Bot-Framework.git"
+    "@bot-experiences/framework": "0.1.0"
   }
 }

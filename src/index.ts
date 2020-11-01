@@ -1,7 +1,7 @@
 import ENV from './environment';
 
 import tmi from 'tmi.js';
-import Bot, { ChatClient } from 'bot-framework/src/Bot';
+import Bot, { ChatClient } from '@bot-experiences/framework';
 
 import WelcomeService from './services/welcome';
 
@@ -21,6 +21,8 @@ const client: ChatClient = new tmi.client({
   channels: [ ENV.credentials.channel ]
 })
 
+const context = {};
+
 new Bot(
   {
     banList: [],
@@ -29,7 +31,7 @@ new Bot(
     connectedMessage: 'Example Bot reporting for duty'
   },
   client,
-  {},
+  context,
   [
     new WelcomeService()
   ]

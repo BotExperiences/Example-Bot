@@ -17,8 +17,6 @@
   "include": [
     "types/**/*",
     "src/**/*",
-    "tests/**/*",
-    "node_modules/bot-framework/src/**/*",
-    "node_modules/bot-framework/types/**/*",
+    "tests/**/*"
   ]
 }
