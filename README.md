@@ -22,7 +22,8 @@ password=oauth:somekeyhere
 
 ## Usage
 
-- `npm start`
+- `npm start` to run the bot
+- `npm run lint` to check the source code against eslint
 
 ## Extending
 
