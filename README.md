@@ -1,6 +1,6 @@
 # Example-Bot
 
-Use this as an exampe for working with [`@bot-experiences/framework`](https://github.com/BotExperiences/Bot-Framework).
+Use this as an example for working with [`@bot-experiences/framework`](https://github.com/BotExperiences/Bot-Framework).
 
 ## Requirements
 
